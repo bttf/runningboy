@@ -33,7 +33,7 @@ nature_fx.loop = true;
 var bird_fx = new Audio("audio/bird.wav");
 bird_fx.preload = "auto";
 bird_fx.loop = false;
-var jeffmangum = new Audio("audio/jeffmangum.mp3");
+var jeffmangum = new Audio("audio/jeffmangum.ogg");
 jeffmangum.preload = "auto";
 jeffmangum.volume = 0.0;
 var music_distance = 30;
@@ -141,7 +141,6 @@ var play_music = function() {
 	if (((tree_distance + tree.height) - world_y) <= 1000) {
 		if (!jeff_is_playing) {
 			jeffmangum.play();
-			jeffmangum.currentTime = 60;
 			jeff_is_playing = true;
 		}
 		if (((tree_distance + tree.height)- world_y) > 0) {
@@ -186,9 +185,9 @@ var draw_flower = function() {
 
 var draw = function() {
 	draw_tree();
-	draw_boy();
 	draw_bird();
 	draw_man();
+	draw_boy();
 	draw_flower();
 	play_music();
 	// draw_debug();
